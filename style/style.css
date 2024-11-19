@@ -8,7 +8,7 @@
 .message {
     display: none;
     color: var(--main-color);
-    margin: 50px auto;
+    margin: 50px auto 72.5px;
     font-size: 15px;
     width: fit-content;
 }
@@ -27,6 +27,7 @@
 body {
     background-color: #222;
     color: var(--main-color);
+    min-height: 100vh;
 }
 
 ul {
