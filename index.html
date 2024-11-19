@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Series List</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header>
+            <div class="content container">
+                <h1 class="main-title"><a href="index.html">Series List</a></h1>
+                <ul>
+                    <li><a href="watchList.html">Watch List</a></li>
+                    <li><a href="watched.html">Watched</a></li>
+                    <li>
+                        <a class="search-button" href="">Search</a>
+                        <!-- Start Search Area -->
+                        <div class="search-area">
+                            <input type="text" placeholder="Search By Series Title">
+                            <p></p>
+                            <div class="results"></div>
+                        </div>
+                        <!-- Start Search Area -->
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- End Header -->
+        <!-- Start watch list series area -->
+        <div class="watch-list series-area container">
+            <h2>Last Series That You Added To Watch List :</h2>
+            <p class="message">There Are No Series In Watch List To Show</p>
+            <div class="series"></div>
+        </div>
+        <!-- End watch list series area -->
+        <!-- Start watched series area -->
+        <div class="watched series-area container">
+            <h2>Last Series That You Watched :</h2>
+            <p class="message">There Are No Series In Watched Section To Show</p>
+            <div class="series"></div>
+        </div>
+        <!-- End watched series area -->
+        <!-- Start Footer -->
+        <footer>
+            <p>Made By Basel</p>
+        </footer>
+        <!-- End Footer -->
+        <script src="js/main.js" type="module"></script>
+    </body>
+</html>

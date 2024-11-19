@@ -1,0 +1,424 @@
+/* Start Global Variable */
+:root {
+    --main-color: gold;
+    font-size: 18px;
+}
+/* End Global Variable */
+/* Start Common Element */
+.message {
+    display: none;
+    color: var(--main-color);
+    margin: 57.5px auto;
+    font-size: 20px;
+    width: fit-content;
+}
+
+.message.show {
+    display: block;
+}
+/* End Common Element */
+/* Start Global Rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #222;
+    color: var(--main-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+}
+
+p {
+    line-height: 1.6;
+}
+
+@media (min-width: 765px)
+{
+    .container {
+        width: 720px;
+    }
+}
+
+@media (min-width: 950px)
+{
+    .container {
+        width: 900px;
+    }
+}
+
+@media (min-width: 1200px)
+{
+    .container {
+        width: 1050px;
+    }
+}
+/* End Global Rules */
+/* Start Header */
+header {
+    background-color: black;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0px;
+    z-index: 100;
+}
+
+header h1{
+    position: relative;
+}
+
+header h1::before {
+    content: "";
+    position: absolute;
+    width: 115%;
+    height: 1px;
+    bottom: 0px;
+    left: -20px;
+    background-color: var(--main-color);
+}
+
+header h1::after {
+    content: "";
+    position: absolute;
+    width: 1.5px;
+    height: 110%;
+    left: -5px;
+    bottom: -8px;
+    background-color: var(--main-color);
+}
+
+header .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 765px) {
+    header .content {
+        flex-direction: column;
+        gap: 35px;
+        margin-bottom: 10px;
+    }
+}
+
+header .content ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+@media (max-width: 765px) {
+    header .content ul{
+        gap: 11px;
+    }
+}
+
+header .content ul li a{
+    padding: 10px 13px;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+@media (max-width: 765px) {
+    header .content ul li a {
+        font-size: 16px;
+    }
+}
+
+header .content ul li:last-child a {
+    background-color: var(--main-color);
+    color: black;
+}
+
+header .content ul li:not(:last-child) a:hover {
+    background-color: #222;
+}
+
+header .content ul li:not(:last-child) a.active {
+    background-color: #222;
+}
+/* End Header */
+/* Start series-area */
+.series-area {
+    margin-top: 60px;
+}
+
+.series-area h2 {
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.series-area .series {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.series-area .series .poster img{
+    width: 100%;
+    height: 100%;
+    border: 5px groove var(--main-color);
+}
+/* End series-area */
+/* Start Watched Series Area*/
+.watched.series-area {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+/* End Watched Series Area*/
+/* Start footer */
+footer {
+    background-color: black;
+    padding: 10px;
+}
+
+footer p{
+    width: fit-content;
+    margin: auto;
+}
+/* End footer */
+/* Start Watch List Page */
+.watch-list-page,
+.watched-page {
+    padding: 60px 0px 60px 0px;
+}
+
+.watch-list-page .series-count,
+.watched-page .series-count{
+    width: fit-content;
+    margin: 0px auto 20px auto;
+    font-size: 25px;
+    font-weight: 900;
+    background-color: var(--main-color);
+    color: #222;
+    padding: 0px 10px;
+    border-radius: 6px;
+}
+
+.watch-list-page .content, 
+.watched-page .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.watch-list-page .content .poster,
+.watched-page .content .poster {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.watch-list-page .content .poster img,
+.watched-page .content .poster img {
+    width: 100%;
+    height: 100%;
+    border: 5px groove var(--main-color);
+}
+
+.watch-list-page .content .poster .overlay,
+.watched-page .content .poster .overlay {
+    background-color: rgba(255, 217, 0, 0.223);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.watch-list-page .content .poster:hover .overlay,
+.watched-page .content .poster:hover .overlay {
+    opacity: 1;
+}
+
+.watch-list-page .content .poster .control {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.watch-list-page .content .poster .overlay .control span,
+.watched-page .content .poster .overlay span{
+    padding: 5px 10px;
+    text-align: center;
+    color: white;
+    font-weight: 200;
+    font-size: 15px;
+    background-color: #222;
+    border-radius: 6px;
+}
+/* End Watch List Page */
+/* Start Serach Area */
+.search-area {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 55px;
+    background-color: black;
+    padding: 40px;
+    overflow: hidden;
+    display: none;
+}
+
+@media (max-width: 765px) {
+    .search-area {
+        padding: 10px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 765px) {
+    .search-area {
+        top: 122px;
+    }
+}
+
+.search-area.show{
+    display: block;
+}
+
+.search-area > p {
+    display: none;
+    margin: auto;
+    width: fit-content;
+    margin-top: 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.search-area > p.show {
+    display: block;
+}
+
+.search-area input {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    outline: none;
+    border: 5px solid var(--main-color);
+    font-weight: 600;
+}
+
+.search-area .results {
+    height: 440px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.search-area .results::-webkit-scrollbar {
+    width: 10px;
+}
+
+.search-area .results::-webkit-scrollbar-track {
+    background: white;
+}
+
+.search-area .results::-webkit-scrollbar-thumb {
+    background: #222;
+}
+
+.search-area .results .serie {
+    display: flex;
+}
+
+@media (max-width: 765px) {
+    .search-area .results .serie {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+.search-area .results .serie:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+}
+
+.search-area .results .serie:not(:first-child) {
+    padding-top: 10px;
+}
+
+.search-area .results .serie img {
+    width: 80px;
+}
+
+.search-area .results .serie .info {
+    padding-left: 20px;
+    color: white;
+    font-size: 16px;
+}
+
+
+@media (max-width: 765px) {
+    .search-area .results .serie .info {
+        padding-left: 0px;
+    }
+}
+
+.search-area .results .serie .control {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 20px;
+    gap: 10px;
+}
+
+@media (max-width: 765px) {
+    .search-area .results .serie .control {
+        padding-right: 0px;
+    }
+}
+
+.search-area .results .serie .control span {
+    display: block;
+    color: black;
+    background-color: var(--main-color);
+    width: 155px;
+    text-align: center;
+    padding: 5px 9px;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid var(--main-color);
+    transition: 0.2s;
+}
+
+.search-area .results .serie .control span:hover {
+    background-color: black;
+    color: var(--main-color);
+}
+/* End Serach Area */

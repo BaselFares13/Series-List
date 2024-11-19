@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Watch List</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <!-- Start Header -->
+        <header>
+            <div class="content container">
+                <h1 class="main-title"><a href="index.html">Series List</a></h1>
+                <ul>
+                    <li><a class="active" href="watchList.html">Watch List</a></li>
+                    <li><a href="watched.html">Watched</a></li>
+                    <li>
+                        <a class="search-button" href="">Search</a>
+                        <!-- Start Search Area -->
+                        <div class="search-area">
+                            <input type="text" placeholder="Search By Series Title">
+                            <p></p>
+                            <div class="results"></div>
+                        </div>
+                        <!-- Start Search Area -->
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!-- End Header -->
+        <!-- Start Watch List -->
+        <div class="watch-list-page">
+            <p class="series-count">0 Series</p>
+            <p class="message">There Is No Series You Added in Watch list Yet</p>
+            <div class="content container"></div>
+        </div>
+        <!-- End Watch List -->
+        <script src="js/main.js" type="module"></script>
+        <script src="js/watchList.js" type="module"></script>
+    </body>
+</html>
